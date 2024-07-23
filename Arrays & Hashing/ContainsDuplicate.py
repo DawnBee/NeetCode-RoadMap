@@ -48,3 +48,16 @@ def m3_contains_duplicate(nums: List[int]) -> bool:
         if val > 1:
             return True
     return False
+
+
+# Method #4: Using a dictionary
+def m4_contains_duplicate(nums: List[int]) -> bool:
+    num_counts = {} # O(1) - Space
+
+    for num in nums:
+        num_counts[num] = 1 + num_counts.get(num, 0)
+
+    for val in num_counts.values():
+        if val > 1:
+            return True
+    return False
