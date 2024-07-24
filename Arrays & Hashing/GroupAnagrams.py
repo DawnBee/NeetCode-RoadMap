@@ -18,7 +18,7 @@ from typing import List
 from collections import defaultdict
 
 # Method #1: Pre-built dictionary with 'n' times alphabets' total
-def group_anagrams(words: List[str]) -> List[List[str]]:
+def m1_group_anagrams(words: List[str]) -> List[List[str]]:
     result = defaultdict(list)
 
     for s in words:  # O(n * k) - Time
@@ -30,7 +30,7 @@ def group_anagrams(words: List[str]) -> List[List[str]]:
 
 
 # Method #2: Using sorts
-def group_anagrams(words: List[str]) -> List[List[str]]:
+def m2_group_anagrams(words: List[str]) -> List[List[str]]:
     anagrams = defaultdict(list) # O(1) - Space
 
     for word in words:
