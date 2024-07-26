@@ -25,7 +25,7 @@ Output: true
 """
 from typing import List
 
-def isValidSudoku(board: List[List[str]]) -> bool:
+def is_valid_sudoku(board: List[List[str]]) -> bool:
     from collections import defaultdict as dd
 
     cols = dd(set)
