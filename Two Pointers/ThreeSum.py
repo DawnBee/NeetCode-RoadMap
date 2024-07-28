@@ -16,6 +16,7 @@ def three_sum(nums: List[int]) -> List[List[int]]:
     res = []
     nums.sort()
 
+    # Checks if val has duplicate else skip
     for index, val in enumerate(nums):
         if index > 0 and val == nums[index - 1]:
             continue
