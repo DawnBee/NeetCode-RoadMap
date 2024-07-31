@@ -11,6 +11,7 @@ Output: 9
 """
 from typing import List
 
+# Method #1: Two Pointers
 def trap(height: List[int]) -> int:
     if not height:
         return 0
@@ -29,3 +30,19 @@ def trap(height: List[int]) -> int:
             right_max = max(right_max, height[right])
             res += right_max - height[right]
     return res
+
+
+# Method #2: Having left and right sublists based on the highest wall
+def trap(height: List[int]) -> int:
+    highest_level = height.index(max(height))
+
+    volume = 0
+    # Contains blocks from the left and right of the highest block
+    for level in [height[:highest_level], height[:highest_level:-1]]:
+        first = 0
+        for block in level:
+            if block < first:
+                volume += first - block
+            else:
+                first = block
+    return volume
