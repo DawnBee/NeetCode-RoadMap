@@ -31,7 +31,7 @@ minStack.top();    // return 0
 minStack.getMin(); // return -2
 """
 
-# Top solutions on LeetCode uses an aggreate function "min()"
+# Top solutions on LeetCode uses an aggregate function "min()"
 # which I think defeats the purpose of the problem, the idea here
 # is that they want us to create a "MinStack" using a 
 # 'Monotonically Decreasing Stack'.
