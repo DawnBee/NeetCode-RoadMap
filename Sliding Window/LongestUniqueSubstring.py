@@ -14,7 +14,7 @@ Input: s = "bbbbb"
 Output: 1
 Explanation: The answer is "b", with the length of 1.
 """
-def length_of_substring(s):
+def length_of_substring(s:str) -> str:
     seen, left, res = set(), 0, 0
 
     for right in range(len(s)):
