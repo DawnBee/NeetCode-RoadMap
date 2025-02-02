@@ -27,6 +27,7 @@ def print_linked_list(head):
             print(current.val, end=" --> ")
         current = current.next
 
+# Iterative
 def merge_lists(list1: Optional[ListNode], list2: Optional[ListNode]):
     dummy = ListNode()
     tail = dummy
@@ -49,6 +50,21 @@ def merge_lists(list1: Optional[ListNode], list2: Optional[ListNode]):
 
     return dummy.next
 
+# Recursive
+def merge_lists_2(list1: Optional[ListNode], list2: Optional[ListNode]):
+    if not list1:
+        return list2
+    
+    if not list2:
+        return list1
+    
+    if list1.val <= list2.val:
+        list1.next = merge_lists_2(list1.next, list2)
+        return list1
+    else:
+        list2.next = merge_lists_2(list1, list2.next)
+        return list2
+
 
 node_1 = ListNode(1)
 node_2 = ListNode(2)
@@ -66,5 +82,5 @@ node_a.next = node_b
 node_b.next = node_c
 llist_2 = node_a
 
-print_linked_list(merge_lists(llist_1, llist_2))
+print_linked_list(merge_lists_2(llist_1, llist_2))
 # 1 --> 1 --> 2 --> 3 --> 4 --> 4
